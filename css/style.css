@@ -1,0 +1,331 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f7f7f7;
+}
+
+.wrapper{
+    background: #fff;
+    width: 450px;
+    border-radius: 16px;
+    box-shadow: 2px 2px 10px 2px lightblue,0 32px 64px -48px red;
+
+}
+
+.form{
+    padding: 25px 30px;
+}
+
+.form header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.form form{
+    margin: 20px 0;
+}
+.form form .name-details{
+    display: flex;
+    justify-content: space-between;
+}
+.form form .name-details .field:first-child{
+    margin-right: 7px;
+}
+.form form .error-text{
+    text-align: center;
+    color: rgb(236, 33, 33);
+    background: rgb(244, 198, 198);
+    padding: 5px 0px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.form form .field{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+.form form i{
+    position: absolute;
+    right: 15px;
+    top: 27px;
+    opacity: 0.3;
+    
+}
+.form form i:hover{
+    cursor: pointer;
+}
+
+.form form .field input{
+    font-size: 16px;
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form form .image input{
+    font-size: 16px;
+    margin: 5px 0;
+
+}
+.form form .button input{
+    font-size: 17px;
+    height: 45px;
+    margin-top: 5px;
+    background: black;
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.form .link{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.form .link a{
+    text-decoration: none;
+    font-weight: 400;
+    color: #45d12c;
+}
+.form .link a:hover{
+    text-decoration: underline;
+}
+
+/* User area CSS */
+
+.users{
+    padding: 25px 30px;
+}
+.users header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+:is(.users, .users-list) .content{
+    display: flex;
+    align-items: center;
+}
+
+.users header .content img{
+    height: 55px;
+    width: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+:is(.users, .users-list) .content .details{
+    margin-left: 15px;
+    color: #000;
+    /* margin-top: 5px; */
+}
+:is(.users, .users-list) .content .details span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.users header  .logout{
+    padding: 7px 15px;
+    background: black;
+    color: #e6e6e6;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.users .search{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+}
+
+.users .search input{
+    position: absolute;
+    padding: 0px 7px;
+    height: 42px;
+    width: calc(100% - 50px);
+    font-size: 16px;
+    border: 5px 0 0 5px;
+    outline: none;  
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.users .search input.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.users .search button{
+    height: 42px;
+    width: 47px;
+    border: none;
+    background: #fff;
+    color: #333;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+    cursor: pointer;
+}
+.users .search button.active{
+    color: #fff;
+    background: #333;
+}
+.users .search button.active i::before{
+    content: "\f00d";
+}
+
+.users-list{
+    max-height: 350px;
+    overflow-y: auto;
+}
+:is(.chat-area .chat-box,.users-list)::-webkit-scrollbar{
+    width: 0;
+}
+.users-list a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-right: 10px;
+    margin-bottom: 15px;
+    page-break-after: 10px;
+    border-bottom-color: #f1f1f1;
+}
+.users-list a:last-child{
+    border: none;
+    margin-bottom: 0;
+}
+
+.users-list a .content img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.users-list a .content p{
+    color: #67676a;
+}
+.users-list a .status-dot{
+    font-size: 12px;
+    color: #45d12c;
+}
+
+.users-list a .status-dot.offlice{
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* Chat Area CSS */
+
+.chat-area header{
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.chat-area header .back-icon{
+    font-size: 18px;
+    color: #333;
+}
+
+.chat-area header img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 10px;
+}
+
+.chat-area .chat-box{
+    padding: 10px 30px 20px 30px;
+    height: 500px;
+    background: #f2efef;
+    overflow-y: auto;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
+              inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+
+.chat-area .chat-box .outgoing{
+    background: #333;
+    border-radius: 10px 10px 0 10px;
+    padding: 10px 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+.chat-area .chat-box .outgoing p{
+    color: white;
+    font-size: 15px;
+    word-wrap: break-word;
+}
+.chat-area .chat-box .incoming{
+    display: flex;
+    align-items: flex-end;
+    margin: 5px 0;
+}
+.chat-area .chat-box .incoming img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+.chat-area .chat-box .incoming .details{
+    background: #fff;
+    width: 70%;
+    margin: 5px auto 5px 0;
+    border-radius: 10px 10px 10px 0px;
+    padding: 10px;
+}
+.chat-area .chat-box .incoming .details p{
+    font-size: 15px;
+    word-wrap: break-word;
+}
+
+.chat-area .typing-area{
+    padding: 18px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-area .typing-area input{
+    height: 45px;
+    width: calc(100% - 45px);
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 17px;
+    outline: none;
+    margin-right: 2px;
+}
+.chat-area .typing-area button{
+    width: 49px;
+    height: 45px;
+    border: none;
+    background: #000;
+    color: aliceblue;
+    border-radius: 0 5px 5px 0;
+    font-size: 20px;
+    cursor: pointer;
+}
