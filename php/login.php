@@ -13,6 +13,7 @@
             if(mysqli_num_rows($sql2)>0) {
                 $row=mysqli_fetch_assoc($sql2);
                 $_SESSION['unique_id']= $row['unique_id'];
+                
                 echo"success";
             }
             else {
