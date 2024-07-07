@@ -224,10 +224,10 @@ body{
 }
 .users-list a .status-dot{
     font-size: 12px;
-    color: #45d12c;
+    color: #06ee39;
 }
-
-.users-list a .status-dot.offlice{
+/* When user goes Offline */
+.users-list a .status-dot.offline{ 
     font-size: 12px;
     color: #ccc;
 }

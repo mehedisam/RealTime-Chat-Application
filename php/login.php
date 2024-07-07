@@ -12,6 +12,7 @@
             $sql2=mysqli_query($conn, $query2);
             if(mysqli_num_rows($sql2)>0) {
                 $row=mysqli_fetch_assoc($sql2);
+                $sql3=mysqli_query($conn, "UPDATE users set status='Active now' where email='{$row['email']}'");
                 $_SESSION['unique_id']= $row['unique_id'];
                 
                 echo"success";

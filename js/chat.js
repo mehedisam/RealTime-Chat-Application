@@ -3,6 +3,14 @@ const sendBtn=form.querySelector("button");
 const msgArea=form.querySelector(".Message");
 const outgoing= document.querySelector(".chat-box");
 //const incoming= document.querySelector(".chat-box .incoming");
+outgoing.onmouseenter = function(){
+    outgoing.classList.add("active");
+};
+outgoing.onmouseleave = function(){
+    outgoing.classList.remove("active");
+};
+
+
 
 form.onsubmit = (e)=>{
     e.preventDefault();
@@ -15,6 +23,7 @@ sendBtn.addEventListener("click",function(){
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
                 msgArea.value="";
+                outgoing.scrollTop=outgoing.scrollHeight;
                 // let data=xhr.response;
                 // outgoing.innerHTML=data;
             }
@@ -35,10 +44,9 @@ setInterval(()=>{
             if(xhr.status === 200){
                 let data=xhr.response;
                 outgoing.innerHTML=data;
-                //console.log(flag);
-                //if(flag==0)
-                console.log(data);
-               
+                if(!outgoing.classList.contains("active"))
+                    outgoing.scrollTop=outgoing.scrollHeight;
+                    
             }
         }
     }

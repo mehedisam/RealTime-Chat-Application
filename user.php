@@ -3,6 +3,7 @@
     if (!isset($_SESSION["unique_id"])){
         header("location: login.php");
     }
+    
 ?>
 
 <?php include_once("header.php"); ?>
@@ -11,6 +12,10 @@
         include_once("php/config.php");
         $sql=mysqli_query($conn,"SELECT * from users where unique_id = '{$_SESSION["unique_id"]}'");
         $row=mysqli_fetch_array($sql);
+        if($row['status']=='Offline now'){
+            session_destroy();
+            header("location: login.php");
+        }
     ?>
     <div class="wrapper">
         <section class="users">
@@ -22,7 +27,7 @@
                         <p><?php echo $row['status'];  ?></p>
                     </div>
                 </div>
-                <a href="#" class="logout">Logout</a>
+                <a href="logout.php" class="logout">Logout</a>
             </header> 
             <div class="search">
                 <span>Select an user to chat</span>
