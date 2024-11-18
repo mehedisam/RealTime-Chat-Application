@@ -16,10 +16,11 @@ A real-time messaging web application built using **HTML**, **CSS**, **JavaScrip
 - **Backend**: PHP
 - **Database**: MySQL
 
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/real-time-chat-app.git
 
 ## Screenshots
+
+![Chat Interface](images/interface.png)
+_The main chat interface where users can send and receive messages in real-time._
+
+![Login Screen](images/login.png)
+_The register screen where users can sign up or go to login page._
