@@ -20,7 +20,9 @@ A real-time messaging web application built using **HTML**, **CSS**, **JavaScrip
 ## Screenshots
 
 ![Chat Interface](images/interface.png)
-_The main chat interface where users can send and receive messages in real-time._
+
+**The main chat interface where users can send and receive messages in real-time.**
 
 ![Login Screen](images/login.png)
-_The register screen where users can sign up or go to login page._
+
+**The register screen where users can sign up or go to login page.**
